@@ -21,22 +21,21 @@ def f(x):
     return math.e ** (-x**3) - x**4 - math.sin(x)
 
 def secant(x_0 = -1, x_1 = 1):
-    x_i_minus_1, x_i = x_0, x_1
+    x_iminus_1, x_i = x_0, x_1
 
-
-    print("0)\tx0: " + str(x_i_minus_1) + "\tx1: " + str(x_i), end="\n\n")
+    print("0)\tx0: " + str(x_iminus_1) + "\tx1: " + str(x_i), end="\n\n")
     iteration = 1
     while True:
         y = f(x_i)
-        y_minus_1 = f(x_i_minus_1)
+        y_iminus_1 = f(x_iminus_1)
 
-        x_i_plus_one = x_i - (x_i - x_i_minus_1)*(y/(y-y_minus_1))
-        y_i_plus_one = f(x_i_plus_one)
-        print(str(iteration) + ")\tx: " + str(x_i_plus_one) + "\ty: " + str(y_i_plus_one), end="\n\n")
-        if abs(root-x_i_plus_one) < (0.5*(10**(-4))) or f(x_i_plus_one) == 0:
+        x_iplus_one = x_i - (x_i - x_iminus_1)*(y/(y-y_iminus_1))
+        y_iplus_one = f(x_iplus_one)
+        print(str(iteration) + ")\tx: " + str(x_iplus_one) + "\ty: " + str(y_iplus_one), end="\n\n")
+        if abs(root-x_iplus_one) < (0.5*(10**(-4))) or y_iplus_one == 0:
             break
 
-        x_i_minus_1, x_i = x_i, x_i_plus_one
+        x_iminus_1, x_i = x_i, x_iplus_one
         iteration += 1
     return 
 
