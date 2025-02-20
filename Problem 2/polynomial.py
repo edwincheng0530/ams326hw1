@@ -27,18 +27,4 @@ def polynomial(x):
 
     return term1 + term2 + term3 + term4 + term5
 
-# PROBLEM DESCRIPTION
-# Given a set of 5 data points of Tesla stocks, we need to interpolate the data in a polynomial P_4(t) and
-# consequently compute P_4(t=6) using the polynomial P_4(t) function.
-
-
-# ALGORITHM DESCRIPTION
-# The algorithm follows Lagrange's sinterpolation solution for polynomial interpolations. Since we are
-# given five data points, we will create a P_4(t) polynomial by following his general case, where given
-# n+1 points, we can create an n-th order polynomial.
-
-def quadratic(x):
-    pass
-
-
 print(polynomial(6))
