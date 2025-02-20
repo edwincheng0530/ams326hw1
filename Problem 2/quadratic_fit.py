@@ -15,6 +15,7 @@ import numpy as np
 # The matrix b is simply the price of the Tesla stocks on its given day. Thus, we are then
 # able to solve for the values c_1, c_2, and c_3 for the quadratic line of best fit.
 
+# Tesla stock data points | key = day, value = price 
 tesla_stock = {
     1: 412,
     2: 407,
@@ -24,7 +25,11 @@ tesla_stock = {
 }
 
 def quadratic(x):
+    flop = 0
     A_list, B_list = [], []
+    # For each data point (day, price), create A matrix and B matrix such that
+    # A_list contains a list of coefficients of equation c_1 + c_2*t + c_3*t^2 for each day
+    # and B_list contains the y value (price) of each x-value (day)
     for key, value in tesla_stock.items():
         currRow = []
         B_list.append(value)
@@ -32,19 +37,30 @@ def quadratic(x):
             currRow.append((key**power))
         A_list.append(currRow)
     
+    # Create A matrix, B matrix and transposed A matrix
     A_matrix = np.array(A_list)
     AT_matrix = A_matrix.T
     B_matrix = np.array(B_list)#.t
 
+    # Multiply to obtain product of AT*A matrix and AT*B matrix
     ATxA = np.matmul(AT_matrix, A_matrix)
     ATxB = np.matmul(AT_matrix, B_matrix)
 
-    coefficients = np.linalg.solve(ATxA, ATxB)
+    print(ATxA)
+    print(ATxB)
 
+    # Solve for x values in the equation Ax = B, where A and B are matrices
+    coefficients = np.linalg.solve(ATxA, ATxB)
+    flop += 6
+
+    # Approximate value for x given the quadratic line of best fit
     res = 0
     for i, coeff in enumerate(coefficients):
         res += coeff * (x**i)
+        flop += 2
 
-    return res
+    return res, flop
 
-print(quadratic(6))
+res, flop = quadratic(6)
+print("Estimated # of Floating Point Operations: " + str(flop))
+print("Q_2(t=6) = " + str(res))

@@ -22,8 +22,7 @@ def f(x):
 
 # Given parameters of a = -1 and b = 1
 def bisection(a = -1, b = 1):
-    flop = 0
-    iteration = 1
+    flop, iteration = 0, 1
     while True:
         # Obtain a new value of x in the middle of a and b
         x = (a+b)/2
