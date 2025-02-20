@@ -14,23 +14,36 @@
 import math
 
 root = 0.641583
+error = 0.5*(10**(-4))
 
+# Method that effectively represents f(x) - returns the value y given x
 def f(x):
     return math.e ** (-x**3) - x**4 - math.sin(x)
 
+# Given parameters of a = -1 and b = 1
 def bisection(a = -1, b = 1):
-    y = 0
+    flop = 0
     iteration = 1
     while True:
+        # Obtain a new value of x in the middle of a and b
         x = (a+b)/2
+        flop += 1
+        # Calculate y-value of this new x-value
         y = f(x)
+        flop += 2
         
         print(str(iteration) + ")\ta: " + str(a) + "\tb: " + str(b))
         print("\tx: " + str(x) + "\ty: " + str(y), end="\n\n")
-        if abs(root-x) < (0.5*(10**(-4))) or y == 0:
+
+        flop += 1
+        # If new x-value is within range of root or y is 0, we have found the root
+        if abs(root-x) < error or y == 0:
+            print("Estimated # of Floating Point Operations: " + str(flop))
             break
+        # If the y-value > 0, then the root is to the right of x, update left range 
         elif y > 0:
             a = x
+        # If the y-value < 0, then the root is to the left of x, update right range
         elif y < 0:
             b = x
 
