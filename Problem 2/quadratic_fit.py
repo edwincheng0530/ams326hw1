@@ -45,10 +45,7 @@ def quadratic(x):
     # Multiply to obtain product of AT*A matrix and AT*B matrix
     ATxA = np.matmul(AT_matrix, A_matrix)
     ATxB = np.matmul(AT_matrix, B_matrix)
-
-    print(ATxA)
-    print(ATxB)
-
+    
     # Solve for x values in the equation Ax = B, where A and B are matrices
     coefficients = np.linalg.solve(ATxA, ATxB)
     flop += 6

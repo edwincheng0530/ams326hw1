@@ -35,8 +35,8 @@ def montecarlo(min_value = 0.50, max_value = 0.75):
         print(str(iteration) + ")\tx: " + str(x) + "\ty: " + str(y), end="\n\n")
         
         flop += 1
-        # If new x-value is within range of root or y is 0, we have found the root
-        if abs(root-x) < error or y == 0:
+        # If new x-value OR Y is within range error (0.00005), we have found the root
+        if abs(root-x) < error or abs(y) < error:
             print("Estimated # of Floating Point Operations: " + str(flop))
             break
 

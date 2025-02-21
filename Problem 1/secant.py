@@ -42,8 +42,8 @@ def secant(x_0 = -1, x_1 = 1):
         y_iplus_one = f(x_iplus_one)
         flop += 2
         print(str(iteration) + ")\tx: " + str(x_iplus_one) + "\ty: " + str(y_iplus_one), end="\n\n")
-        # If new x-value is within range of root or y is 0, we have found the root
-        if abs(root-x_iplus_one) < error or y_iplus_one == 0:
+        # If new x-value OR Y is within range error (0.00005), we have found the root
+        if abs(root-x_iplus_one) < error or abs(y_iplus_one) < error:
             print("Estimated # of Floating Point Operations: " + str(flop))
             break
 

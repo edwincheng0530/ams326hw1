@@ -35,8 +35,8 @@ def bisection(a = -1, b = 1):
         print("\tx: " + str(x) + "\ty: " + str(y), end="\n\n")
 
         flop += 1
-        # If new x-value is within range of root or y is 0, we have found the root
-        if abs(root-x) < error or y == 0:
+        # If new x-value OR Y is within range error (0.00005), we have found the root
+        if abs(root-x) < error or abs(y) < error:
             print("Estimated # of Floating Point Operations: " + str(flop))
             break
         # If the y-value > 0, then the root is to the right of x, update left range 
