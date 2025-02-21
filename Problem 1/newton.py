@@ -46,7 +46,7 @@ def newton(x_0 = 0):
 
         # Calculate new value of x
         x = x-(y/yprime) 
-        flop += 1  
+        flop += 2  
         iteration += 1     
 
 newton()

@@ -1,6 +1,6 @@
 # PROBLEM DESCRIPTION
 # Implement a bisection algorithm that finds the root of a given function f(x) = e(-x^3) - x^4 - sinx.
-# The root x, should be satsify the inequality |x-r| < 0.5 x 10^-4, where r is the actual root, approximated
+# The root x, should be satsify the inequality |x-r| < 0.5 x 10^-4 (0.00005), where r is the actual root, approximated
 # to be r = 0.641583. In the program, we need to specify the number of steps/iterations as well as the value
 # of x as well as f(x) at each iteration of the bisection method.  
 
