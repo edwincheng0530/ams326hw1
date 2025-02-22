@@ -30,7 +30,7 @@ def montecarlo(min_value = 0.50, max_value = 0.75):
         x = round(x, 5)
         # Calculate y-value of this new x-value
         y = f(x)
-        flop += 2
+        flop += 3
         
         print(str(iteration) + ")\tx: " + str(x) + "\ty: " + str(y), end="\n\n")
         

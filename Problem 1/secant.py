@@ -30,7 +30,7 @@ def secant(x_0 = -1, x_1 = 1):
     while True:
         # Calculate y-value of x_i
         y = f(x_i)
-        flop += 2
+        flop += 3
         # Calculate y-value of x_iminus_1
         y_iminus_1 = f(x_iminus_1)
         flop += 2

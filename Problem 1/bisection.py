@@ -29,7 +29,7 @@ def bisection(a = -1, b = 1):
         flop += 1
         # Calculate y-value of this new x-value
         y = f(x)
-        flop += 2
+        flop += 3
         
         print(str(iteration) + ")\ta: " + str(a) + "\tb: " + str(b))
         print("\tx: " + str(x) + "\ty: " + str(y), end="\n\n")

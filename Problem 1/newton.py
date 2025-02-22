@@ -31,10 +31,10 @@ def newton(x_0 = 0):
     while True:
         # Calculate y-value of x
         y = f(x)
-        flop += 2
+        flop += 3
         # Calculate y'-value of x
         yprime = fprime(x)
-        flop += 2
+        flop += 5
         
         print(str(iteration) + ")\tx: " + str(x) + "\ty: " + str(y), end="\n\n")
 
