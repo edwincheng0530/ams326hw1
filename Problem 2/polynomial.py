@@ -4,9 +4,15 @@
 
 
 # ALGORITHM DESCRIPTION
-# The algorithm follows Lagrange's sinterpolation solution for polynomial interpolations. Since we are
+# The algorithm follows Lagrange's interpolation solution for polynomial interpolations. Since we are
 # given five data points, we will create a P_4(t) polynomial by following his general case, where given
 # n+1 points, we can create an n-th order polynomial.
+
+# PERFORMANCE
+# Creating a polynomial interpolation of five day's of Tesla stocks is relatively fast, computer-wise.
+# We can consider this an O(1) time complexity, due to the fact that the answer to the interpolation of
+# t = 6 is not dependent on the size of input. We are simply able to create the proper Lagrange interpolation
+# polynomial and substitute in t=6 for the value.
 
 # Tesla stock data points | key = day, value = price 
 tesla_stock = {

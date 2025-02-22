@@ -15,6 +15,13 @@ import numpy as np
 # The matrix b is simply the price of the Tesla stocks on its given day. Thus, we are then
 # able to solve for the values c_1, c_2, and c_3 for the quadratic line of best fit.
 
+# PERFORMANCE
+# The creation of a quadratic fit for the five days of Tesla stocks is also quite trivial like
+# the Lagrange interpolation of this same set of data. We can easily solve the equation Ax = b,
+# in which both A and b represent matrices of the leading coefficients of the data sets mapped
+# onto c_1 + c_2*t + c_3*t^2 = y. The computation for this is trivial, and thus the time complexity
+# for this algorithm can also be represented as O(1).
+
 # Tesla stock data points | key = day, value = price 
 tesla_stock = {
     1: 412,

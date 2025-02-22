@@ -11,6 +11,12 @@
 # we are already given the function f(x) beforehand, we also know the derivative of f(x) beforehand, allowing us to
 # update x_i at every iteration, until f(x_i) reaches 0.
 
+# PERFORMANCE
+# The performance of Newton's method works very well given this function f(x) and a default x value of 0. 
+# Comparatively to the bisection method, it runs in fewer iterations due to the fact that it naturally 
+# converges to the root, while the bisection method simply takes the midpoint at every iteration as the
+# new x-value.
+
 import math
 
 root = 0.641583

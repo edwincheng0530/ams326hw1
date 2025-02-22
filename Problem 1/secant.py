@@ -10,7 +10,14 @@
 # The value of x+1 using the formula x_(i+1) = x_i - (x_i - x_(i-1)) *  f(x_i) / (f(x_i) - f(x_(i-1))). Thus, for
 # each iteration, we calculate the value of x_(i+1), checking whether x_(i+1) is the root of the function f(x). 
 # The values of x_i_minus_1 and x_i get updated properly in each iteration to represent x_i and x_(i+1) respectively
-# in order to calculate the next x-value.
+# in order to calculate the next x-value.'
+
+# PERFORMANCE
+# Compared to the Newton's method, in Secant's method, we do not need the derivative of the function f(x) in order
+# to calculate the root of the given function. However, this comes with its ups and downs, as the Secant's method
+# generally needs more floating point operations relative to Newton's method, as seen by the estimated number 
+# of floating point operations. This means that it is mathematically more complex for machines to calculate the 
+# root in comparison to Newton's method.
 
 import math
 
@@ -33,14 +40,14 @@ def secant(x_0 = -1, x_1 = 1):
         flop += 3
         # Calculate y-value of x_iminus_1
         y_iminus_1 = f(x_iminus_1)
-        flop += 2
+        flop += 3
 
         # Calculate new x_iplus_one value
         x_iplus_one = x_i - (x_i - x_iminus_1)*(y/(y-y_iminus_1))
-        flop += 3
+        flop += 4
         # Obtain y-value of new x_iplus_one value
         y_iplus_one = f(x_iplus_one)
-        flop += 2
+        flop += 3
         print(str(iteration) + ")\tx: " + str(x_iplus_one) + "\ty: " + str(y_iplus_one), end="\n\n")
 
         flop += 1

@@ -9,6 +9,15 @@
 # guessing until the value x is close enough to the root (in which the value of f(x) given
 # x is equal to 0)
 
+# PERFORMANCE
+# The Monte Carlo algortihm is by far the worst performing algorithm out of the batch of
+# methods (Bisection, Newton, and Secant). This is due to the fact that we are randomly
+# choosing a value in between two ranges and using this as a guess for the value of the root
+# at iteration. There is inherently no mathematical logic behind this (besides the random
+# number generation). This is also not the mention the fact that the range is relative small,
+# with a difference of 0.25, and that had the range been any bigger, the algorithm was take
+# a long time to run.
+
 import math
 import random
 

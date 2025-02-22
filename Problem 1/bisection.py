@@ -11,6 +11,13 @@
 # f(m) is greater than 0, then we know that the root must be between the range of (m, b], otherwise we know that the root
 # is in [a, m).
 
+# PERFORMANCE
+# Performance-wise, the bisection method will run on average in O(logn) time, due to the fact that we will always
+# be dividing and exploring one half while removing the other half. Mathematically though, this method may be
+# very tedious, taking multiple iterations in order to find the proper root due to a "guess and checking" type
+# of methodology in finding the roots. Overall, the algorithm works but is not the most efficient due to this
+# constant guess and checking done at every iteration.
+
 import math
 
 root = 0.641583
