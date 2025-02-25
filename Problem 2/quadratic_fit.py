@@ -22,7 +22,7 @@ import numpy as np
 # onto c_1 + c_2*t + c_3*t^2 = y. The computation for this is trivial, and thus the time complexity
 # for this algorithm can also be represented as O(1).
 
-# Tesla stock data points | key = day, value = price 
+# Tesla stock data points | key = day, value = price  
 tesla_stock = {
     1: 412,
     2: 407,
